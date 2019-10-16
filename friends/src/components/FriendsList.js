@@ -1,7 +1,6 @@
 import React from 'react'
-import Friends from './Friends';
 
-const FriendsList = props => {
+const FriendsList = () => {
 
 }
 

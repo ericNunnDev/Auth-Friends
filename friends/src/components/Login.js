@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { axiosAuth } from '../auth/axiosAuth';
+import img from '../images/friends-2.jpg';
 
 const Login = props => {
     const [creds, setCreds] = useState('');
@@ -20,23 +21,28 @@ const Login = props => {
     return (
         <div>
             <form onSubmit={login}>
-                <h2>Login</h2>
-                <input 
+                <h3>Login</h3>
+                <label>
+                    Username: 
+                  <input 
                     name='username'
                     type='text' 
-                    placeholder='username'
                     value={creds.username}
                     onChange={handleChange}
-                />
-                <input
-                     name='password'
-                     type='password' 
-                     placeholder='password'
-                     value={creds.password}
-                     onChange={handleChange}
-                />
+                   />
+                </label>
+                <label>
+                    Password: 
+                  <input
+                    name='password'
+                    type='password' 
+                    value={creds.password}
+                    onChange={handleChange}
+                  />
+                </label>
                 <button className='btn' type='submit'>Submit</button>
             </form>
+            <img className='login-img responsive-img' src={img} alt='Friends' />
         </div>
     )
 }

@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+
+  h1, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
 
 ul {
@@ -13,4 +17,9 @@ ul {
 form {
   margin: 0 auto;
   width: 80%;
+}
+
+.login-img {
+  margin-top: 5em;
+  border-radius: 100px;
 }
