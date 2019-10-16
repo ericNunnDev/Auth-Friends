@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import { axiosAuth } from '../auth/axiosAuth';
 
 const Login = props => {
     const [creds, setCreds] = useState('');
 
-    // const login = e => {
-    //     e.preventDefault();
-    // }
+    const login = e => {
+        e.preventDefault();
+        axiosAuth().post('/login', creds)
+        .then(res => {
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/');
+        })
+    }
 
     const handleChange = e => {
         setCreds({[e.target.name]: e.target.value}); 
@@ -13,7 +19,7 @@ const Login = props => {
 
     return (
         <div>
-            <form>
+            <form onSubmit={login}>
                 <h2>Login</h2>
                 <input 
                     name='username'
