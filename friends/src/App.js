@@ -1,13 +1,30 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { PrivateRoute } from './auth/PrivateRoute';
+import Public from './components/Public';
 import Login from './components/Login';
+import FriendsList from './components/FriendsList';
 import './App.scss';
 
-function App() {
+export default function App() {
   return (
+    <Router>
     <div className="App">
-      <Login />
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='login'>Login</Link>
+        </li>
+        <li>
+          <Link to='/friendslist'>Freinds List</Link>
+        </li>
+      </ul>
+      <Route exact path='/' component={Public} />
+      <Route path='/login' component={Login} />
+      <PrivateRoute path='/friendslist' component={FriendsList} />
     </div>
+    </Router>
   );
 }
-
-export default App;

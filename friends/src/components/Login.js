@@ -1,12 +1,22 @@
 import React, { useState } from 'react'
 
-const Login = props => {
+const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [input, setInput] = useState('');
 
     return (
         <div>
             <form>
-                <input type='text' />
+                <input 
+                    name='username'
+                    type='text' 
+                    placeholder='username'
+                />
+                <input
+                     name='password'
+                     type='password' 
+                     placeholder='password'
+                />
                 <button type='submit'>Submit</button>
             </form>
         </div>
