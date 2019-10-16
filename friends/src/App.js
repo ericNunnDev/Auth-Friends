@@ -10,6 +10,7 @@ export default function App() {
   return (
     <Router>
     <div className="App">
+      <nav className='nav-wrapper'>
       <ul>
         <li>
           <Link to='/'>Home</Link>
@@ -21,6 +22,7 @@ export default function App() {
           <Link to='/friendslist'>Freinds List</Link>
         </li>
       </ul>
+      </nav>
       <Route exact path='/' component={Public} />
       <Route path='/login' component={Login} />
       <PrivateRoute path='/friendslist' component={FriendsList} />
